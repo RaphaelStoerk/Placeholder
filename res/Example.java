@@ -21,7 +21,7 @@ public class Example {
         stars = stars + 1;
         // halbiere c
         coins = coins / 2;
-
+      // ansonsten
       } else {
         // beende wiederholung
         break;
