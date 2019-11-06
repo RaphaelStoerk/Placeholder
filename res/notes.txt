@@ -1,0 +1,30 @@
+[Projekt Notizen]
+
+###############################################################
+
+[Abstimmungen über Arsnova]
+
+  https://arsnova.eu/mobile/#id/51288092
+
+  oder
+
+  https://arsnova.eu/ und dann die id: 51288092 eingeben
+
+  Der Arsnova link sollte das ganze Semester gültig sein,
+  dort kann jederzeit _anonym_ abgestimmt und Fragen gestellt
+  werden, die dann im Tutorium analysiert/beantwortet werden
+  können
+
+###############################################################
+
+[Bisherige Projekt-Parameter]
+
+  Art: "Spiel"
+  Genre: "Puzzle/Adventure/Jump'n'Run"
+  Oberfläche: erstmal "Konsole/Textbasiert"
+  Sprache: "Java"
+  Framework: "<ausstehend>"
+  Titel: "<placeholder>"
+  Konzept: "???"
+
+################################################################
