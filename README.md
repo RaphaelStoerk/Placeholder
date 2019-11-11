@@ -3,6 +3,11 @@
 ### Ein Eidi Projekt
 
 Dieses Repository enthält alle wichtigen Dateien zur Projektentwicklung des *Eidi Tutoriums Mi 16-18 Uhr, Raphael Störk.* 
+Dieses Projekt ist eine rein freiwillige Übung die keine Voraussetzung für das Bestehen der Übung ist und ist dementsprechend was die Richtigkeit einzelner Lösungen/Ansätze angeht mit Vorsicht zu genießen. Dieses Repository ist nur für die Tutoriumsinterne Arbeit gedacht:
+
+**Ich (Raphael) übernehme keine Verantortung dafür, falls sich Tutoriumsfremde Personen hier zusätzliches Wissen aneignen, welches sich als misverständlich/inkorrekt erweist**
+
+Es wird jedoch darauf hingewiesen, dass jederzeit Anmerkungen zu Fehlern und Unstimmigkeiten an mich gemeldet werden können, damit diese Projekt kontinuierlich up-to-date gehalten werden kann.
 
 #### Basic How To 
 
