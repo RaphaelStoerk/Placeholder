@@ -3,8 +3,7 @@ import java.util.Scanner;
 /**
 * This is the main class for the project "placeholder"
 *
-* @author Raphael Stoerk, while also representing all members of the wednesday
-* tut, 16-18
+* @author Raphael Stoerk
 */
 public class Application {
 
@@ -18,14 +17,16 @@ public class Application {
     // create a new Scanner that lets us read in input from the user
     Scanner scan = new Scanner(System.in);
 
-    // ask the user to input his/her name
-    System.out.print("Welcome to <placeholder>\nPlease enter your name\n> ");
+    // ask the user to input their name
+    System.out.print("Welcome to <placeholder>\nPlease enter your name\n\t::> ");
 
     // read in the name of the user
     String name = scan.nextLine();
 
     // greet the user
     System.out.println("Hello " + name + ", have fun playing this game!");
+
+    // TODO: Create a menu for the user to chose from
 
     // say goodbye to the user
     System.out.println("Goodbye " + name + ", it seems that this is all for now!");
