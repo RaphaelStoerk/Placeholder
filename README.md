@@ -7,7 +7,7 @@ Dieses Projekt ist eine rein freiwillige Übung die *keine* Voraussetzung für d
 
 **Ich (Raphael) übernehme keine Verantwortung dafür, falls sich Tutoriumsfremde Personen hier zusätzliches Wissen aneignen, welches sich als misverständlich/inkorrekt erweist**
 
-Es wird jedoch darauf hingewiesen, dass jederzeit Anmerkungen zu Fehlern und Unstimmigkeiten an mich gemeldet werden können, damit diese Projekt kontinuierlich up-to-date gehalten werden kann.
+Es wird jedoch darauf hingewiesen, dass jederzeit Anmerkungen zu Fehlern und Unstimmigkeiten an mich gemeldet werden können, damit dieses Projekt kontinuierlich up-to-date gehalten werden kann.
 
 ## Basic How To 
 
