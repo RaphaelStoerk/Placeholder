@@ -1,0 +1,41 @@
+[Algorithmus]
+_Endgame_
+  Man sammelt als Spieler im Verlauf des Spiels Punkte, Münzen
+  und Sterne. Am Ende des Spiels wird einem dann automatisch
+  für je 10 Punkte eine Münze geschenkt. Sollte man
+  eine gerade Anzahl an Münzen haben kann man sich
+  für die Hälfte seiner Münzen einen Stern kaufen. Dies
+  kann auch öfters geschehen. Falls man
+  am Schluss mehr als 10 Sterne besitzt hat man gewonnen.
+
+
+[Spezifikation]
+"sammeln": Addition auf die Werte
+"Punkte, Münzen, Sterne": nicht-negative Ganzzahlen
+"gewonnen": s > 10, Zustand
+"geschenkt, kaufen": c, s wird erhöht
+
+[Abstraktion]
+  "Gegeben": s, p, c als nicht-negative Ganzzahlen
+  "Gesucht": E(s_fin) = s_fin > 10
+
+[Entwicklung]
+Gegeben: s, p, c;
+c = c + round_down(p / 10);
+while c > 1:
+  if c % 2 = 0
+    c = c / 2;
+    s = s + 1;
+  else
+    break while
+  end if
+end loop
+
+if s > 10
+  print 'spieler hat gewonnen'
+else
+  print 'spieler hat verloren'
+end if
+
+[Aufwand]
+log(n)
