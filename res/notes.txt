@@ -28,3 +28,20 @@
   Konzept: "???"
 
 ################################################################
+
+[Features/Anforderungen]
+
+[FA 1]
+ "Start-Menu"
+  Der Benutzer soll nach starten der Anwendung in einem Menü die Möglichkeit
+  haben unterschiedliche Optionen der Anwendung auszuwählen/zu erreichen.
+
+[FA 2]
+  "<Titel>"
+  <Beschreibung>
+
+################################################################
+
+[Story]
+
+################################################################
