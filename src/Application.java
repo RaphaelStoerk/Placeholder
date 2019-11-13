@@ -24,9 +24,12 @@ public class Application {
     String name = scan.nextLine();
 
     // greet the user
+    // TODO: Fix input bug
     System.out.println("Hello " + name + ", have fun playing this game!");
 
     // TODO: Create a menu for the user to chose from
+
+    
 
     // say goodbye to the user
     System.out.println("Goodbye " + name + ", it seems that this is all for now!");
