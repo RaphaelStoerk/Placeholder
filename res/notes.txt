@@ -37,11 +37,41 @@
   haben unterschiedliche Optionen der Anwendung auszuwählen/zu erreichen.
 
 [FA 2]
-  "<Titel>"
-  <Beschreibung>
+  "Credits"
+
+[FA 3]
+  "Gameplay"
+
+[FA 4]
+  "Save"
+
+[FA 5]
+  "Log"
+
+[FA 6]
+  "Load"
+
+[FA 7]
+  "Stats"
+
+[FA 8]
+  "Soundeffekte"
+
+[FA 9]
+  "Optionen"
+
+[FA 10]
+  "Pause"?
+
+
+
 
 ################################################################
 
 [Story]
+
+- verschiedene Enden
+-
+
 
 ################################################################
