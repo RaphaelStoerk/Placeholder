@@ -38,30 +38,53 @@
 
 [FA 2]
   "Credits"
+  Durch eine Option im Start-Menü soll der Nutzer die Möglichkeit haben
+  Hintergrund-Informationen über das Spiel und dessen Entwickler zu bekommen.
 
 [FA 3]
   "Gameplay"
+  Vom Start-Menü aus soll der Nutzer die Möglichkeit haben das Hauptspiel
+  zu starten.
 
 [FA 4]
   "Save"
+  Dem Benutzer soll es jederzeit möglich sein seinen aktuelle Spielfortschritt
+  zu speichern.
 
 [FA 5]
   "Log"
+  In einer entsprechend formatierten Log-Datei soll der Nutzer Informationen
+  über seinen bisherigen Spielfortschritt abrufen können. (vgl Tagebuch)
 
 [FA 6]
   "Load"
+  Aus dem Startmenü heraus soll ein Nutzer die Möglichkeit haben einen früher
+  gespeicherten Spielfortschritt zu laden und damit weiter zu spielen.
 
 [FA 7]
   "Stats"
+  Ein Benutzer soll die Möglichkeit haben Statistiken über seinen aktuellen
+  Spielfortschritt abrufen zu können (vgl Log).
 
 [FA 8]
   "Soundeffekte"
+  Bei bestimmten Events in der Anwendung soll einem Nutzer auch auditiv
+  Feedback gegeben werden.
 
 [FA 9]
   "Optionen"
+  Ein Nutzer soll im Start-Menü die Möglichkeit haben verschiedene Optionen
+  der Anwendung anpassen zu können (vgl Soundeffekte, Schwierigkeitsgrad).
 
 [FA 10]
   "Pause"?
+  Ein Nutzer soll die Möglichkeit haben das Spiel in passenden Momenten
+  pausieren und weiter laufen lassen zu können.
+
+[FA 11]
+  "Schwierigkeitsgrad"
+  Die Anwendung soll dem Nutzer erlauben einen von mehreren Schwierigkeitsgraden
+  auszuwählen, der das Niveau des Hauptspiels anpasst.
 
 
 
