@@ -35,7 +35,11 @@ public class Application {
 
       // TODO: consider using a switch statement
       if(opt == 1) {
+        // TODO: implement minigame
         System.out.println("This is a game");
+
+
+        
       } else if(opt == 2) {
         System.out.println("This is options");
       } else if(opt == 3) {

@@ -20,12 +20,16 @@
 [Bisherige Projekt-Parameter]
 
   Art: "Spiel"
-  Genre: "Puzzle/Adventure/Jump'n'Run"
-  Oberfläche: erstmal "Konsole/Textbasiert"
   Sprache: "Java"
   Framework: "<ausstehend>"
   Titel: "<placeholder>"
-  Konzept: "???"
+  Konzept:
+    Perspektive: "First-Person?"
+    Spieler: "Single-Player?"
+    Genre: "Adventure/Puzzle?"
+    Interaktion: "Konsole?"
+    Beschreibung: "<Kurzfassung Story>"
+
 
 ################################################################
 
@@ -86,6 +90,24 @@
   Die Anwendung soll dem Nutzer erlauben einen von mehreren Schwierigkeitsgraden
   auszuwählen, der das Niveau des Hauptspiels anpasst.
 
+[FA 12]
+  "Mini-Games"
+  Im Verlauf des Hauptspiels soll es immer wieder Punkte geben, an denen ein
+  Spieler ein Mini-Game spielen muss um weiter zu kommen. Diese könnten auch
+  auf einer anderen Oberfläche dargestellt werden.
+
+[FA 13]
+  "Punktesystem"
+  Die Anwendung soll im Verlauf des Spiels den Fortschritt eines Spielers in
+  Form von Punkten speichern. Diese könnten zum Vergleich mit anderen Spielern
+  in einer Bestenliste verwendet werden.
+
+[FA 14]
+  "Inventar"
+  Ein Spieler soll im Verlauf des Spiels die Möglichkeit haben Gegenstände zu
+  finden/kaufen (?) un diese in einem Inventar zu speichern. Dieses sollte
+  immer zugänglich sein.
+
 
 
 
@@ -94,7 +116,12 @@
 [Story]
 
 - verschiedene Enden
--
+- Hauptcharakter?
+- Lore?
+- Zeitraum?
+- Fantasy/Steampunk/Reallife/SciFi...?
+- Romance/Horror/Casual/Comedy/...?
+- Motivation/Hintergrund?
 
 
 ################################################################
