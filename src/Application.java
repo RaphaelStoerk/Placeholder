@@ -17,7 +17,7 @@ public class Application {
 
     // create a new Scanner that lets us read in input from the user
     Scanner scan = new Scanner(System.in);
-    System.out.print("Welcome to <placeholder>\nPlease enter your name\n\t::> ");
+    System.out.print("Welcome to <placeholder>\nPlease enter your name\n\t::NAME::> ");
     String name = scan.nextLine();
     System.out.println("Hello " + name + ", have fun playing this game!");
 
@@ -25,11 +25,12 @@ public class Application {
 
     // The menu loop
     while(running) {
-      System.out.println("You have the following options:");
-      System.out.println("(1) Start Game");
-      System.out.println("(2) Options");
-      System.out.println("(3) End Application");
-
+      System.out.println("\nYou have the following options:");
+      System.out.println("\t(1) Start Game");
+      System.out.println("\t(2) Load Game");
+      System.out.println("\t(3) Options");
+      System.out.println("\t(4) Exit");
+      System.out.print("\n::MENU::> ");
       int opt = scan.nextInt();
       System.out.println("You have entered option: " + opt);
 
@@ -39,11 +40,15 @@ public class Application {
         System.out.println("This is a game");
 
 
-        
+
       } else if(opt == 2) {
-        System.out.println("This is options");
+        System.out.println("This is loading");
       } else if(opt == 3) {
+        System.out.println("This is options");
+      } else if(opt == 4) {
         running = false;
+      } else {
+        System.out.println("THIS IS NOT AN OPTION, YOU FOOL!");
       }
     }
 
