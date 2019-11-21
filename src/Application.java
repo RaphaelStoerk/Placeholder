@@ -49,7 +49,7 @@ public class Application {
             int ergebnis = x + y;
 
             // question to user
-            System.out.println("Frage " + i + ": " + x + " + " + y
+            System.out.println("Frage " + i + ": " + x + " + " + y);
 
             // input form user
             int input = scan.nextInt();
