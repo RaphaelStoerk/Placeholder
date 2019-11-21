@@ -34,24 +34,58 @@ public class Application {
       int opt = scan.nextInt();
       System.out.println("You have entered option: " + opt);
 
-      // TODO: consider using a switch statement
-      if(opt == 1) {
-        // TODO: implement minigame
-        System.out.println("This is a game");
+      switch(opt) {
+        case 1:
+          System.out.println("This is a game");
 
+          // declare variables
+          int correct = 0;
+          long start = System.currentTimeMillis();
 
+          // loop 10 times
+          for(int i = 0; i < 10; i++) {
+            int x = (int)(Math.random() * 100);
+            int y = (int)(Math.random() * 100);
+            int ergebnis = x + y;
 
-      } else if(opt == 2) {
-        System.out.println("This is loading");
-      } else if(opt == 3) {
-        System.out.println("This is options");
-      } else if(opt == 4) {
-        running = false;
-      } else {
-        System.out.println("THIS IS NOT AN OPTION, YOU FOOL!");
+            // question to user
+            System.out.println("Frage " + i + ": " + x + " + " + y
+
+            // input form user
+            int input = scan.nextInt();
+
+            // check if input is correct
+            if(input == ergebnis) {
+              System.out.println("CORRECT");
+              correct++;
+            } else {
+              System.out.println("FALSE");
+            }
+          }
+
+          long end = System.currentTimeMillis();
+          long duration = (end - start) / 1000;
+
+          // check if won
+          if(duration < 60 && correct >= 7) {
+            System.out.println("YOU WON");
+          } else {
+            System.out.println("YOU LOST");
+          }
+          break;
+        case 2:
+          System.out.println("This is loading");
+          break;
+        case 3:
+          System.out.println("This is options");
+          break;
+        case 4:
+          running = false;
+          break;
+        default:
+          System.out.println("THIS IS NOT AN OPTION, YOU FOOL!");
       }
     }
-
     System.out.println("Goodbye " + name + ", it seems that this is all for now!");
   }
 }
