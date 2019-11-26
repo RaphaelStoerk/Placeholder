@@ -38,6 +38,22 @@ public class Application {
         case 1:
           System.out.println("This is a game");
 
+          // Implement Character Creation
+
+          // ask for name, with the option to chose random name
+
+          // ask for age
+
+          // ask for anything else
+
+
+          // show saved properties
+
+
+          /***********************************************/
+          /* let user know that the game is now starting *
+          /***********************************************/
+
           // declare variables
           int correct = 0;
           long start = System.currentTimeMillis();

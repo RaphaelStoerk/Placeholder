@@ -108,9 +108,6 @@
   finden/kaufen (?) un diese in einem Inventar zu speichern. Dieses sollte
   immer zugänglich sein.
 
-
-
-
 ################################################################
 
 [Story]
@@ -122,6 +119,5 @@
 - Fantasy/Steampunk/Reallife/SciFi...?
 - Romance/Horror/Casual/Comedy/...?
 - Motivation/Hintergrund?
-
 
 ################################################################
