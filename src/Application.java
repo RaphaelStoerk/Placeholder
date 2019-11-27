@@ -67,7 +67,7 @@ public class Application {
             // question to user
             System.out.println("Frage " + i + ": " + x + " + " + y);
 
-            // input form user
+            // input from user
             int input = scan.nextInt();
 
             // check if input is correct

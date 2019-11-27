@@ -30,6 +30,49 @@
     Interaktion: "Konsole?"
     Beschreibung: "<Kurzfassung Story>"
 
+################################################################
+
+[Story]
+
+  [Setting]
+    "Zeit":
+      >>
+
+    "Ort":
+      >>
+
+    "Lebensraum":
+      >>
+
+    "Weiteres":
+      >>
+
+  [Main Character]
+    "Alter":
+      >>
+
+    "Familie":
+      >>
+
+    "Herkunft":
+      >>
+
+    "Motivation":
+      >>
+
+    "Ziel":
+      >>
+
+
+Notizen:
+
+- verschiedene Enden
+- Hauptcharakter?
+- Lore?
+- Zeitraum?
+- Fantasy/Steampunk/Reallife/SciFi...?
+- Romance/Horror/Casual/Comedy/...?
+- Motivation/Hintergrund?
 
 ################################################################
 
@@ -107,17 +150,5 @@
   Ein Spieler soll im Verlauf des Spiels die Möglichkeit haben Gegenstände zu
   finden/kaufen (?) un diese in einem Inventar zu speichern. Dieses sollte
   immer zugänglich sein.
-
-################################################################
-
-[Story]
-
-- verschiedene Enden
-- Hauptcharakter?
-- Lore?
-- Zeitraum?
-- Fantasy/Steampunk/Reallife/SciFi...?
-- Romance/Horror/Casual/Comedy/...?
-- Motivation/Hintergrund?
 
 ################################################################
