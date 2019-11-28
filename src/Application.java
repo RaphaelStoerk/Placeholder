@@ -18,9 +18,6 @@ public class Application {
     // create a new Scanner that lets us read in input from the user
     Scanner scan = new Scanner(System.in);
     System.out.print("Welcome to <placeholder>\nPlease enter your name\n\t::NAME::> ");
-    String name = scan.nextLine();
-    System.out.println("Hello " + name + ", have fun playing this game!");
-
     boolean running = true;
 
     // The menu loop
@@ -41,6 +38,40 @@ public class Application {
           // Implement Character Creation
 
           // ask for name, with the option to chose random name
+
+          System.out.print("Do you want to input a name (1) or get a random name (2)?\n::NUMB::> ");
+
+          int nameChoice = scan.nextInt();
+          scan.nextLine();
+          String name = "";
+          if(nameChoice == 1) {
+            System.out.print("Please enter your name:\n::NAME::>");
+            name = scan.nextLine();
+          } else {
+            String vokale = "aeiou";
+            String konsonanten = "bpkglmnrts";
+
+            int length = 1 + (int)(Math.random() * 5);
+            int vokIndex = (int)(Math.random() * 5);
+            if(Math.random() > 0.5) {
+              char vokal = vokale.charAt(vokIndex);
+              name = name + vokal;
+            }
+            for(int i = 0; i < length; i++){
+              vokIndex = (int)(Math.random() * 5);
+              char vokal = vokale.charAt(vokIndex);
+              int konIndex = (int)(Math.random() * konsonanten.length());
+              char konsonant = konsonanten.charAt(konIndex);
+              name = name + konsonant + vokal;
+            }
+          }
+
+          System.out.println("Your name is " + name);
+
+
+
+
+
 
           // ask for age
 
@@ -102,6 +133,6 @@ public class Application {
           System.out.println("THIS IS NOT AN OPTION, YOU FOOL!");
       }
     }
-    System.out.println("Goodbye " + name + ", it seems that this is all for now!");
+    System.out.println("Goodbye, it seems that this is all for now!");
   }
 }

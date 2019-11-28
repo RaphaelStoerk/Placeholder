@@ -36,29 +36,35 @@
 
   [Setting]
     "Zeit":
-      >>
+      >> Industrialisierung
 
     "Ort":
-      >>
+      >> London
 
     "Lebensraum":
-      >>
+      >> Slums/Industriegebiet
 
     "Weiteres":
-      >>
+      >> Rebellengruppe
+      >> Karl Marx?
+      >> Steampunk
+      >> Regierung Rüstet auf
+      >> Wir rüsten ab
+      >> Drogenkriminalität
+
 
   [Main Character]
     "Alter":
-      >>
+      >> Jugendlich/Teenager
 
     "Familie":
-      >>
+      >> Arbeiterfamilie
 
     "Herkunft":
-      >>
+      >> Indisch/Irische Herkunft
 
     "Motivation":
-      >>
+      >> Revolte
 
     "Ziel":
       >>
