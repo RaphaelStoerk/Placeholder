@@ -17,7 +17,7 @@ public class Application {
 
     // create a new Scanner that lets us read in input from the user
     Scanner scan = new Scanner(System.in);
-    System.out.print("Welcome to <placeholder>\nPlease enter your name\n\t::NAME::> ");
+    System.out.print("Welcome to <placeholder>");
     boolean running = true;
 
     // The menu loop
@@ -33,12 +33,8 @@ public class Application {
 
       switch(opt) {
         case 1:
-          System.out.println("This is a game");
-
-          // Implement Character Creation
-
-          // ask for name, with the option to chose random name
-
+          // Character Creation
+          System.out.println("\nFirst let's create your character:");
           System.out.print("Do you want to input a name (1) or get a random name (2)?\n::NUMB::> ");
 
           int nameChoice = scan.nextInt();
@@ -48,42 +44,43 @@ public class Application {
             System.out.print("Please enter your name:\n::NAME::>");
             name = scan.nextLine();
           } else {
+            // prepare variables to generate a random name
             String vokale = "aeiou";
-            String konsonanten = "bpkglmnrts";
-
+            String konsonanten = "bdfghklmnprstyz";
             int length = 1 + (int)(Math.random() * 5);
-            int vokIndex = (int)(Math.random() * 5);
+            char vokal;
+            char konsonant;
+            int konIndex;
+            int vokIndex;
+
+            // maybe add a vocal to start of name
             if(Math.random() > 0.5) {
-              char vokal = vokale.charAt(vokIndex);
+              vokIndex = (int)(Math.random() * vokale.length());
+              vokal = vokale.charAt(vokIndex);
               name = name + vokal;
             }
+
+            // generate a few syllables
             for(int i = 0; i < length; i++){
-              vokIndex = (int)(Math.random() * 5);
-              char vokal = vokale.charAt(vokIndex);
-              int konIndex = (int)(Math.random() * konsonanten.length());
-              char konsonant = konsonanten.charAt(konIndex);
+              vokIndex = (int)(Math.random() * vokale.length());
+              vokal = vokale.charAt(vokIndex);
+              konIndex = (int)(Math.random() * konsonanten.length());
+              konsonant = konsonanten.charAt(konIndex);
               name = name + konsonant + vokal;
             }
           }
 
-          System.out.println("Your name is " + name);
+          System.out.println("Your name is " + name + "\n");
 
+          // TODO: ask for age
 
+          // TODO: ask for anything else
 
+          // TODO: show saved properties
 
-
-
-          // ask for age
-
-          // ask for anything else
-
-
-          // show saved properties
-
-
-          /***********************************************/
-          /* let user know that the game is now starting *
-          /***********************************************/
+          /*****************************************************/
+          /* TODO: let user know that the game is now starting *
+          /*****************************************************/
 
           // declare variables
           int correct = 0;
