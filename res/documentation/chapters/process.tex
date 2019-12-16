@@ -69,7 +69,7 @@ public class Application {
   }
 }
 \end{verbatim}
-\subsection{Woche 2 - }
+\subsection{Woche 2 - Erste Abfragen}
 \label{ch:weektwo}
 \line
 \begin{center}
@@ -120,7 +120,335 @@ Mit diesen nun zugänglichen Grundlagen wurde für das Projekt dann gemeinsam ei
 [...]
 
 \end{verbatim}
-\subsection{Woche 3 - }
+\subsection{Woche 3 - Rechnungen/Mini-Game}
 \label{ch:weekthree}
-\subsection{Woche 4 - }
+\line
+\begin{center}
+	\textbf{KEYWORDS}
+	
+	Schleifen, Abfragen, Rechnungen, switch-case, Ausgaben
+\end{center}
+\line
+In der dritten Woche wurde der Übergang von Algorithmen zu Programmen behandelt. Es wurden grundlegende Konzepte von Algorithmen mit Java-Syntax angesprochen und ein erstes Programm \textbf{implementiert}.
+
+Dadurch war es möglich nicht nur das bestehende Menü dieser Anwendung in einen switch-case umzubauen, sondern auch bereits ein erstes kleines Mini-Spiel zu programmieren. Hierzu wurde im Menü-Punkt eins testweise ein Spiel mit folgenden Regeln entwickelt:
+
+\begin{itemize}
+	\item Ein Spieler muss einfache Rechenaufgaben lösen
+	\item Es gibt pro Runde zehn Rechnungen
+	\item Gewonnen hat ein Spieler wenn mindestens 7 Aufgaben richtig gelöst wurden
+	\item Außerdem hat ein Spieler nur 60 Sekunden Zeit pro Runde
+\end{itemize}
+
+Hierbei wurde nun einmal die funktionsweise von \textbf{for-Schleifen} betrachtet, die Möglichkeit Zahlen vom Benutzer einzulesen, die Möglichkeit Zahlen und Ergebnisse in \textbf{Variablen} abzuspeichern, zufällige Fragen zu generieren und mit Hilfe der \textbf{Java API} die benötigte Zeit zu messen. Es entstand folgender Code:
+
+\begin{verbatim}
+// declare variables
+int correct = 0;
+long start = System.currentTimeMillis();
+
+// loop 10 times
+for(int i = 0; i < 10; i++) {
+  int x = (int)(Math.random() * 100);
+  int y = (int)(Math.random() * 100);
+  int ergebnis = x + y;
+
+  // question to user
+  System.out.println("Frage " + i + ": " + x + " + " + y);
+
+  // input from user
+  int input = scan.nextInt();
+
+  // check if input is correct
+  if(input == ergebnis) {
+    System.out.println("CORRECT");
+    correct++;
+  } else {
+    System.out.println("FALSE");
+  }
+}
+
+long end = System.currentTimeMillis();
+long duration = (end - start) / 1000;
+
+// check if won
+if(duration < 60 && correct >= 7) {
+  System.out.println(name + ": YOU WON!");
+} else {
+  System.out.println(name + ": YOU LOST");
+}
+\end{verbatim}
+\subsection{Woche 4 - Strings und Schleifen}
 \label{ch:weekfour}
+\line
+\begin{center}
+	\textbf{KEYWORDS}
+	
+	Schleifen Part 2, String-Operationen 
+\end{center}
+\line
+Die vierte Woche diente dazu weitere Schleifen-Arten kennen zu lernen. Es wurde besprochen wie unterschiedliche Schleifen aufgebaut sind und wie sie sich zueinander verhalten. Es wurden \textbf{for-, while-, und do-while-Schleifen} erlernt und angewandt. 
+
+Desweiteren wurden in dieser Woche die verschiedenen Operationen auf Strings vorgestellt, welche sehr oft verwendet werden. Dazu zählt die Ermittlung der Länge eines Strings mit \textbf{myString.length()} und die Abfrage nach Zeichen an einer bestimmten Stelle im String mit \textbf{myString.charAt(index)} (index sollte eine Zahl zwischen 0 und myString.length() - 1 sein, vgl. Tutorium). Wichtig ist hierbei auch die Gleichheitsabfrage auf Strings mit \textbf{myString.equals(otherString)}, da es sich bei Strings nicht um primitve Datentypen handelt und die Verwendung von \textbf{'=='} hier zu Fehler führen kann.
+
+Die Verbindung dieser Operationen mit for-Schleifen lässt uns eine ganze Reihe an String-basierten Methoden entwickeln. Dazu gehören Zeichen- und Mustersuche, Ersetzungen, Textgenerierung und weiteres.
+
+Diese Konzepte wurden in unserer Anwendung in einer 'Random Name Challenge' verwendet. Die Idee war bei der Charakter Erstellung am Beginn des Spiels dem Spieler die Möglichkeit zu geben einen zufälligen Name generieren zu lassen. Grundlage war hier eine eigens erdachte, Silbenbasierte Namens-Syntax, die wie folgt beschrieben werden kann:
+\begin{itemize}
+	\item Eine Silbe besteht aus einem Konsonanten gefolgt von einem Vokal
+	\item Ein Name ist eine Aneinanderreihung mehrerer Silben
+	\item Die erste Silbe eines Namens kann auch Nur ein Vokal sein, aber nur fallls ihr eine weitere Silbe folgt
+	\item Ein Name sollte nicht länger als 5 Silben lang sein (Plus eventuelle erste Vokal-Silbe)
+\end{itemize}
+Hierfür wurden nun Konsonanten und Vokale in eigene Strings gepackt um später über einen zufälligen Index jede mögliche Silbe erhalten zu können. Dies war mit den oben genannten Operationen ohne weitere Probleme mögliche. Es entstand folgender Code:
+\begin{verbatim}
+// prepare variables to generate a random name
+String name = "";
+String vokale = "aeiou";
+String konsonanten = "bdfghklmnprstyz";
+int length = 1 + (int)(Math.random() * 5);
+char vokal;
+char konsonant;
+int konIndex;
+int vokIndex;
+
+// maybe add a vocal to start of name
+if(Math.random() > 0.5) {
+  vokIndex = (int)(Math.random() * vokale.length());
+  vokal = vokale.charAt(vokIndex);
+  name = name + vokal;
+}
+
+// generate a few syllables
+for(int i = 0; i < length; i++){
+  vokIndex = (int)(Math.random() * vokale.length());
+  vokal = vokale.charAt(vokIndex);
+  konIndex = (int)(Math.random() * konsonanten.length());
+  konsonant = konsonanten.charAt(konIndex);
+  name = name + konsonant + vokal;
+}
+
+System.out.print("Your name is now: " + name);
+\end{verbatim}
+
+
+\subsection{Woche 5 - Arrays}
+\label{ch:weekfive}
+\line
+\begin{center}
+	\textbf{KEYWORDS}
+	
+	Arrays, Mehrdimensionale Arrays
+\end{center}
+\line
+In Woche fünf wurden nun komplexere Datentypen in Form von Arrays vorgestellt. Arrays dienen in Java zur Abbildung von Listen und Vektoren in statischer Form. Initialisiert werden Arrays anders als die bisherigen Datentypen über den Befehl \textit{new}: \textbf{int[] myFirstArray = new int[10];} wäre ein Beispiel zur Erzeugeung eines Arrays mit 10 Plätzen. Diese Länge 10 des Arrays ist fest und kann später nicht mehr verändert werden. Um auf die Plätze in einem Array zuzugreifen reicht eine einfache Angabe des Index in eckigen Klammern:
+
+\textbf{myFirstArray[2] = 42;}
+
+\textbf{int solToUniv = myFirstArray[2];}
+
+So lassen sich nun logisch zusammengehörige Reihen einfach speichern und verändern. Da man diese Arrays auch als Vektoren betrachten kann liegt es Nahe auch mehrdimensionale Vektoren, also Matrizen, mit Arrays darzustellen. Dies ist durch einfache Mehrfachklammerung bei der Deklarierung möglich:
+
+
+\textbf{int[][] myMatrix; } // 2-dim-Vektor
+
+\textbf{int[][][] highDim; } // 3-dim-Vektor
+
+Vorstellen kann man sich diese Matrizen als 'Arrays von Arrays', man sollte bedenken, dass es einfache Auflistungen von weiteren Arrays sind. Die Indizierung erfolgt von außen nach innen: Ein Aufruf an myMatrix[2][1] bedeutet, dass man im äußeren Array an die Position 2 schaut. Dort befindet sich ein inneres Array. Bei diesem schaut man dann an Stelle 2. Dort befindet sich der gesuchte Wert. Wichtig auch hier zu beachten, ist das die Stellen bei 0 starten. Siehe folgende Darstellung:
+
+myMatrix = $\{$
+
+0: 
+\begin{Bmatrix}
+	0: a, & 1: b, & 2: c
+\end{Bmatrix}, 
+
+1: 
+\begin{Bmatrix}
+	0: d, & 1: e, & 2: f
+\end{Bmatrix}, 
+
+2: 
+\begin{Bmatrix}
+	0: g, & 1: h, & 2: i
+\end{Bmatrix}
+
+$\}$
+
+Wobei die Zeichen \textit{'a',...,'i'} für beliebige Integer stehen. Der Wert myMatrix[2][1] wäre hier also \textbf{h}, der Wert myMatrix[0][2] entsprechend \textbf{c}.
+
+Arrays sind also vielseitig einsetzbar. Für eine erste Übung wurde in der Anwendung die Verwendung eines Arrays als Inventar für den Spieler erdacht. Idee war in dieser Woche erste Story-Elemente zu entwickeln und eine Grundlage für die Interaktion des Spielers mit verschiedenen Items zu erstellen. Dafür wurden mögliche Items in einem ersten Array angelegt und das Inventar als weiteres, leeres Array eingeführt. Es wurden nun in einer Schleife je ein zufälliges Item ermittelt und der Nutzer wurde gefragt ob dieses Item in das Inventar gelegt werden sollte. Es entstand folgender Code:
+
+\begin{verbatim}
+// items
+String[] items = new String[]{"Crowbar", "Schere", "Stift", "Fackel", "Buch"};
+// Inventar
+String[] inventory = new String[10];
+
+for(int i = 0; i < inventory.length; i++) {
+  inventory[i] = "empty";
+}
+
+// the game loop
+while(true) {
+  String foundItem = items[(int)(Math.random() * items.length)];
+  System.out.println(name + " found " + foundItem);
+  String q = "Pick up?";
+  String yesOption = "y";
+  String noOption = "n";
+  System.out.print(q + "\n\t(" + yesOption + ")\n\t(" + noOption + ")\n\t::>");
+  String answer = scan.nextLine();
+
+  if(answer.equals(yesOption)) {
+    for(int i = 0; i < inventory.length; i++) {
+      if(inventory[i].equals("empty")) {
+        inventory[i] = foundItem;
+        break;
+      }
+    }
+    System.out.println(name + " picked up " + foundItem);
+  } else {
+    System.out.println("Nothing was picked up");
+  }
+}
+\end{verbatim}
+
+Klar ist, dass in diesem Beispiel viele Fälle noch nicht abgefragt wurden: was wenn das Inventar voll ist? Wie kann das Inventar betrachtet werden? Kann man ähnliche Items stapeln? Kann man Items aus dem Inventar wieder entfernen? Diese Fragen sollten sich interessierte Teilnehmer selber überlegen, eine verbesserte Version wird vermutlich im Lauf des Entwicklungsprozesses eingebaut werden.
+
+
+\subsection{Woche 6 - Methoden}
+\label{ch:weeksix}
+\line
+\begin{center}
+	\textbf{KEYWORDS}
+	
+	Methoden (Syntax, Aufruf, Parameter, Sichtbarkeit), globale Variablen
+\end{center}
+\line
+In dieser Woche wurden \textbf{Methoden} (oder auch Funktionen/Unterprogramme/...) eingeführt. Speziell wurde auf deren Syntax, Verwendung und die zugehörigen Themen \textbf{Sichtbarkeit, Überdeckung und Überladung} eingegangen.
+
+Eine Methode ist ein in sich angeschlossenes Teilprogramm, welches von anderen Stellen im Programm verwendet werden kann. Sie stehen in Java innerhalb einer Klasse aber außerhalb der main-Methode. Es können Werte an die Methode übergeben werden und es kann ein Wert von der Methode zurück gegeben werden. Ein Methodenkopf ist folgendermaßen aufgebaut:
+
+\textbf{[<Zugriff>][static]<Typ><Name>([<Paramter>]*)}
+
+Beispiele:
+
+\textbf{public static int laenge(String testString)}
+
+\textbf{static void ausgabe(int eins, int zwei, int drei)}
+
+Der Typ einer Methode gibt an um welchen Typ es sich bei der Rückgabe handelt. Wird void angegeben kann die Methode nichts zurück geben. Wird nicht void angegeben \textbf{muss} die Methode in jedem Fall eine Rückgabe mit diesem Wert machen. Dies erfolgt über eine oder mehrere Angaben der \textbf{return} Anweisung.
+
+Beispiel:
+\begin{verbatim}
+public static int laenge(String testString) {
+  if(testString == null) {
+    return 0;
+  } else {
+    int laengeDesStrings = testString.length();
+    return laengeDesStrings;
+  }
+}
+\end{verbatim}
+
+Wichtig zu beachten ist hier, dass die Angabe von \textbf{return} nicht nur eine Rückgabe darstellt, sondern auch das Unterprogramm an dieser Stelle beendet. Für diese Terminierung wird dieser Befehl daher auch in void-Methoden verwendet.
+
+Im Rahmen der Entwicklung des Projektes wurden zwei Schritte durchgeführt. Einmal wurde versucht bestehende Code-Fragmente in Methoden auszulagern. Danach wurden gegebene Methoden an entsprechender Stelle mit Aufrufen eingebaut.
+
+Im ersten Teil wurde zum Beispiel der Menü-Punkt 'Optionen' in eine eigene Methode verfrachtet und an die Originale Stelle ein Aufruf an diese Methode gesetzt:
+
+\begin{verbatim}
+[...]
+case 2:
+  options();
+  break;
+case 3:
+[...]
+
+[...]
+public static void options() {
+  // implement options
+}
+\end{verbatim}
+
+Dies wurde auch für weitere Teile des Codes getestet. Im zweiten Teil waren nun folgende Methodendeklarationen gegeben: 
+\begin{itemize}
+	\item \textit{pause(long millis): void}, hält das Programm for 'millis' Millisekunden an
+	\item \textit{clear(): void}, entpricht dem Befehl clear in der Konsole 
+	\item \textit{title(String text): void}, gibt einen schön formatierten Titel in der Konsole aus
+	\item \textit{print(String text): void} gibt einen einfachen text aus
+	\item \textit{getAnswer(String question, String... options): String}, fragt 'question' den Nutzer und gibt die Antwort des Nutzers als String zurück. Die String... options stehen für eine beliebige Anzahl an Strings, die hier für möglich Antwort-Möglichkeiten stehen
+	\item \textit{show(String name, String[] list): void}, zeigt eine Liste an Strings mit Titel 'name' auf der Konsole an
+\end{itemize}
+
+Diese wurden an entprechener Stelle im Programm verwendet um das 'Look and Feel' der Anwendung zu verbessern. 
+
+Beispiel:
+
+\begin{verbatim}
+[Methode 'playGame()']
+
+// the method where the game logic is implemented
+public static void playGame() {
+  characterCreation();
+  clear();
+  title("START GAME");
+  pause(2000);
+  clear();
+  title("PLACEHOLDER");
+  pause(2000);
+  clear();
+  title("AND NOW THE STORY BEGINS...");
+  System.out.println();
+  pause(2000);
+  
+  // Preparing Gameplay Parameters
+  // items
+  String[] items = new String[]{"Crowbar", "Schere",
+     "Stift", "Fackel", "Buch"};
+  // Inventar
+  String[] inventory = new String[10];
+
+  for(int i = 0; i < inventory.length; i++) {
+    inventory[i] = "empty";
+  }
+  
+  // the game loop
+  while(true) {
+    clear();
+    title("ITEM FOUND");
+    String foundItem = items[(int)(Math.random() * items.length)];
+    print(mainCharacter.name + " found " + foundItem);
+    pause(1000);
+    String q = "Pick up?";
+    String yesOption = "y";
+    String noOption = "n";
+    String answer = getAnswer(q, yesOption, noOption);
+
+    if (answer.equals(yesOption)) {
+        for(int i = 0; i < inventory.length; i++) {
+            if(inventory[i].equals("empty")) {
+                inventory[i] = foundItem;
+                break;
+            }
+        }
+        System.out.println(name + " picked up " + foundItem);
+    } else {
+        System.out.println("Nothing was picked up");
+    }
+    pause(1000);
+  }
+}
+
+\end{verbatim}
+
+
+\subsection{Woche 7 - Objektorientierung}
+\label{ch:weekseven}
+\line
+\begin{center}
+	\textbf{KEYWORDS}
+	
+	Grundlagen OO, Objekte, Instanzen, Konstruktoren, Parameterübergabe
+\end{center}
+\line
